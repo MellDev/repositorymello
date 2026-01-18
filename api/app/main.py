@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 import logging
 
 from app.config import settings
-from app.api.routes import calendar, github, scraper, projects, contact
+from app.api.routes import calendar, github, scraper, projects, contact, chat
 
 # Configure logging
 logging.basicConfig(
@@ -64,6 +64,7 @@ app.include_router(github.router, prefix="/api/github", tags=["GitHub"])
 app.include_router(scraper.router, prefix="/api/scraper", tags=["Scraper"])
 app.include_router(projects.router, prefix="/api/projects", tags=["Projects"])
 app.include_router(contact.router, prefix="/api/contact", tags=["Contact"])
+app.include_router(chat.router, prefix="/api", tags=["Chat"])
 
 
 @app.get("/", tags=["Root"])

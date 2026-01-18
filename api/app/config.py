@@ -35,6 +35,8 @@ class Settings(BaseSettings):
 
     # OpenAI
     openai_api_key: str = ""
+    openai_model: str = "gpt-4o-mini"
+    max_chat_messages_per_session: int = 3
 
     # Gallery-dl
     download_path: str = "/tmp/downloads"

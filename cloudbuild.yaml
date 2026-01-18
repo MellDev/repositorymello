@@ -47,7 +47,7 @@ steps:
       - 'deploy'
       - 'portfolio-api'
       - '--image=gcr.io/$PROJECT_ID/portfolio-api:$SHORT_SHA'
-      - '--region=us-central1'
+      - '--region=us-east4'
       - '--platform=managed'
       - '--allow-unauthenticated'
       - '--memory=512Mi'
@@ -55,7 +55,7 @@ steps:
       - '--max-instances=10'
       - '--timeout=60'
       - '--port=8080'
-      - '--set-env-vars=NODE_ENV=production,PORT=8080'
+      - '--set-env-vars=NODE_ENV=production,PORT=8080,OPENAI_API_KEY=${_OPENAI_API_KEY},OPENAI_MODEL=gpt-4o-mini,MAX_CHAT_MESSAGES_PER_SESSION=3'
     id: 'deploy-backend'
     waitFor: ['push-backend']
 
@@ -66,7 +66,7 @@ steps:
       - 'deploy'
       - 'portfolio-frontend'
       - '--image=gcr.io/$PROJECT_ID/portfolio-frontend:$SHORT_SHA'
-      - '--region=us-central1'
+      - '--region=us-east4'
       - '--platform=managed'
       - '--allow-unauthenticated'
       - '--memory=256Mi'

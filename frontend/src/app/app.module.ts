@@ -12,6 +12,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ChatComponent } from './components/chat/chat.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { TranslatePipe } from './pipes/translate.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChatComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
