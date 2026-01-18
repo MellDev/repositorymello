@@ -10,11 +10,11 @@ class Settings(BaseSettings):
     node_env: str = "development"
 
     # Database
-    mongodb_uri: str
+    mongodb_uri: str = ""
     mongodb_db: str = "portfolio"
 
     # JWT
-    secret_key: str
+    secret_key: str = ""
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 10080
 
