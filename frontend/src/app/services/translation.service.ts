@@ -1,0 +1,304 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+export type Language = 'pt' | 'en' | 'es';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TranslationService {
+  private currentLanguage = new BehaviorSubject<Language>('pt');
+  public language$: Observable<Language> = this.currentLanguage.asObservable();
+
+  private translations: Record<Language, any> = {
+    pt: {
+      // Navbar
+      nav: {
+        home: 'Home',
+        projects: 'Projetos',
+        tools: 'Ferramentas',
+        schedule: 'Agendar',
+        contact: 'Contato'
+      },
+      // Hero
+      hero: {
+        title: 'Anderson Mello',
+        subtitle: 'Data Engineer & Software Engineer',
+        description: 'Transformando dados em soluções inteligentes | Desenvolvimento web moderno, automações e integrações com IA',
+        btnProjects: 'Ver Projetos',
+        btnSchedule: 'Agendar Reunião'
+      },
+      // Projects
+      projects: {
+        title: 'Projetos',
+        description: 'Confira alguns dos meus trabalhos recentes',
+        viewProject: 'Ver Projeto',
+        viewCode: 'Ver Código',
+        loading: 'Carregando projetos...',
+        error: 'Erro ao carregar projetos'
+      },
+      // Tools
+      tools: {
+        title: 'Ferramentas',
+        description: 'Utilitários para facilitar seu dia a dia',
+        scraper: {
+          title: 'Scraper de Mídia',
+          description: 'Baixe vídeos e imagens de diversas plataformas',
+          placeholder: 'https://exemplo.com/media',
+          btnDownload: 'Baixar Mídia',
+          downloading: 'Baixando...',
+          success: 'Download iniciado com sucesso!',
+          error: 'Erro ao baixar mídia'
+        }
+      },
+      // Schedule
+      schedule: {
+        title: 'Agendar Reunião',
+        description: 'Escolha um horário disponível para conversarmos',
+        form: {
+          name: 'Nome',
+          email: 'Email',
+          date: 'Data',
+          time: 'Horário',
+          message: 'Mensagem (opcional)',
+          btnSubmit: 'Agendar',
+          submitting: 'Agendando...'
+        },
+        success: 'Reunião agendada com sucesso!',
+        error: 'Erro ao agendar reunião',
+        validation: 'Por favor, preencha todos os campos obrigatórios'
+      },
+      // Contact
+      contact: {
+        title: 'Entre em Contato',
+        description: 'Vamos trabalhar juntos? Entre em contato comigo',
+        form: {
+          name: 'Nome',
+          email: 'Email',
+          subject: 'Assunto',
+          message: 'Mensagem',
+          btnSubmit: 'Enviar',
+          sending: 'Enviando...'
+        },
+        info: {
+          email: 'Email',
+          whatsapp: 'WhatsApp',
+          github: 'GitHub',
+          linkedin: 'LinkedIn'
+        },
+        success: 'Mensagem enviada com sucesso!',
+        error: 'Erro ao enviar mensagem',
+        validation: 'Por favor, preencha todos os campos obrigatórios'
+      },
+      // Footer
+      footer: {
+        rights: 'Todos os direitos reservados.'
+      }
+    },
+    en: {
+      // Navbar
+      nav: {
+        home: 'Home',
+        projects: 'Projects',
+        tools: 'Tools',
+        schedule: 'Schedule',
+        contact: 'Contact'
+      },
+      // Hero
+      hero: {
+        title: 'Anderson Mello',
+        subtitle: 'Data Engineer & Software Engineer',
+        description: 'Transforming data into intelligent solutions | Modern web development, automation and AI integrations',
+        btnProjects: 'View Projects',
+        btnSchedule: 'Schedule Meeting'
+      },
+      // Projects
+      projects: {
+        title: 'Projects',
+        description: 'Check out some of my recent work',
+        viewProject: 'View Project',
+        viewCode: 'View Code',
+        loading: 'Loading projects...',
+        error: 'Error loading projects'
+      },
+      // Tools
+      tools: {
+        title: 'Tools',
+        description: 'Utilities to make your day easier',
+        scraper: {
+          title: 'Media Scraper',
+          description: 'Download videos and images from various platforms',
+          placeholder: 'https://example.com/media',
+          btnDownload: 'Download Media',
+          downloading: 'Downloading...',
+          success: 'Download started successfully!',
+          error: 'Error downloading media'
+        }
+      },
+      // Schedule
+      schedule: {
+        title: 'Schedule Meeting',
+        description: 'Choose an available time to talk',
+        form: {
+          name: 'Name',
+          email: 'Email',
+          date: 'Date',
+          time: 'Time',
+          message: 'Message (optional)',
+          btnSubmit: 'Schedule',
+          submitting: 'Scheduling...'
+        },
+        success: 'Meeting scheduled successfully!',
+        error: 'Error scheduling meeting',
+        validation: 'Please fill in all required fields'
+      },
+      // Contact
+      contact: {
+        title: 'Get in Touch',
+        description: "Let's work together? Contact me",
+        form: {
+          name: 'Name',
+          email: 'Email',
+          subject: 'Subject',
+          message: 'Message',
+          btnSubmit: 'Send',
+          sending: 'Sending...'
+        },
+        info: {
+          email: 'Email',
+          whatsapp: 'WhatsApp',
+          github: 'GitHub',
+          linkedin: 'LinkedIn'
+        },
+        success: 'Message sent successfully!',
+        error: 'Error sending message',
+        validation: 'Please fill in all required fields'
+      },
+      // Footer
+      footer: {
+        rights: 'All rights reserved.'
+      }
+    },
+    es: {
+      // Navbar
+      nav: {
+        home: 'Inicio',
+        projects: 'Proyectos',
+        tools: 'Herramientas',
+        schedule: 'Agendar',
+        contact: 'Contacto'
+      },
+      // Hero
+      hero: {
+        title: 'Anderson Mello',
+        subtitle: 'Data Engineer & Software Engineer',
+        description: 'Transformando datos en soluciones inteligentes | Desarrollo web moderno, automatizaciones e integraciones con IA',
+        btnProjects: 'Ver Proyectos',
+        btnSchedule: 'Agendar Reunión'
+      },
+      // Projects
+      projects: {
+        title: 'Proyectos',
+        description: 'Vea algunos de mis trabajos recientes',
+        viewProject: 'Ver Proyecto',
+        viewCode: 'Ver Código',
+        loading: 'Cargando proyectos...',
+        error: 'Error al cargar proyectos'
+      },
+      // Tools
+      tools: {
+        title: 'Herramientas',
+        description: 'Utilidades para facilitar tu día a día',
+        scraper: {
+          title: 'Scraper de Medios',
+          description: 'Descarga videos e imágenes de varias plataformas',
+          placeholder: 'https://ejemplo.com/media',
+          btnDownload: 'Descargar Media',
+          downloading: 'Descargando...',
+          success: '¡Descarga iniciada con éxito!',
+          error: 'Error al descargar media'
+        }
+      },
+      // Schedule
+      schedule: {
+        title: 'Agendar Reunión',
+        description: 'Elige un horario disponible para conversar',
+        form: {
+          name: 'Nombre',
+          email: 'Email',
+          date: 'Fecha',
+          time: 'Horario',
+          message: 'Mensaje (opcional)',
+          btnSubmit: 'Agendar',
+          submitting: 'Agendando...'
+        },
+        success: '¡Reunión agendada con éxito!',
+        error: 'Error al agendar reunión',
+        validation: 'Por favor, complete todos los campos requeridos'
+      },
+      // Contact
+      contact: {
+        title: 'Ponte en Contacto',
+        description: '¿Trabajamos juntos? Contáctame',
+        form: {
+          name: 'Nombre',
+          email: 'Email',
+          subject: 'Asunto',
+          message: 'Mensaje',
+          btnSubmit: 'Enviar',
+          sending: 'Enviando...'
+        },
+        info: {
+          email: 'Email',
+          whatsapp: 'WhatsApp',
+          github: 'GitHub',
+          linkedin: 'LinkedIn'
+        },
+        success: '¡Mensaje enviado con éxito!',
+        error: 'Error al enviar mensaje',
+        validation: 'Por favor, complete todos los campos requeridos'
+      },
+      // Footer
+      footer: {
+        rights: 'Todos los derechos reservados.'
+      }
+    }
+  };
+
+  constructor() {
+    // Carregar idioma salvo ou usar navegador
+    const savedLang = localStorage.getItem('language') as Language;
+    const browserLang = navigator.language.split('-')[0] as Language;
+    const defaultLang = savedLang || (this.isValidLanguage(browserLang) ? browserLang : 'pt');
+    this.setLanguage(defaultLang);
+  }
+
+  private isValidLanguage(lang: string): lang is Language {
+    return ['pt', 'en', 'es'].includes(lang);
+  }
+
+  setLanguage(lang: Language): void {
+    this.currentLanguage.next(lang);
+    localStorage.setItem('language', lang);
+  }
+
+  getCurrentLanguage(): Language {
+    return this.currentLanguage.value;
+  }
+
+  translate(key: string): string {
+    const lang = this.currentLanguage.value;
+    const keys = key.split('.');
+    let value: any = this.translations[lang];
+    
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    
+    return value || key;
+  }
+
+  t(key: string): string {
+    return this.translate(key);
+  }
+}

@@ -1,0 +1,35 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Projetos Destacados</h2>
+    
+    <div *ngIf="loading" class="loading-container">
+      <div class="loading"></div>
+      <p>Carregando projetos...</p>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+
+    <div *ngIf="!loading && !error" class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card">
+        <div class="project-image">
+          <i class="fas" [ngClass]="getIcon(project.category)"></i>
+        </div>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <div class="project-tags">
+          <span *ngFor="let tech of project.technologies" class="tag">{{ tech }}</span>
+        </div>
+        <div class="project-actions">
+          <a *ngIf="project.github_url" [href]="project.github_url" target="_blank" class="btn btn-small">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a *ngIf="project.demo_url" [href]="project.demo_url" target="_blank" class="btn btn-small btn-primary">
+            <i class="fas fa-external-link-alt"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

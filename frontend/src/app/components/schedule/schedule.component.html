@@ -1,0 +1,80 @@
+<section id="schedule" class="schedule">
+  <div class="container">
+    <h2 class="section-title">Agende uma Reunião</h2>
+    <p class="section-description">Vamos conversar sobre seu projeto! Escolha um horário disponível na agenda.</p>
+    
+    <div class="schedule-container">
+      <div class="schedule-form">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nome Completo *</label>
+            <input type="text" id="name" formControlName="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" formControlName="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone (WhatsApp) *</label>
+            <input type="tel" id="phone" formControlName="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Tipo de Serviço *</label>
+            <select id="service" formControlName="service" required>
+              <option value="">Selecione...</option>
+              <option value="website">Desenvolvimento de Website</option>
+              <option value="automation">Automação e IA</option>
+              <option value="integration">Integrações de APIs</option>
+              <option value="consulting">Consultoria Técnica</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Data Preferencial *</label>
+            <input type="date" id="date" formControlName="date" [min]="minDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="time">Horário *</label>
+            <select id="time" formControlName="time" required [disabled]="loadingSlots || !availableSlots.length">
+              <option value="">{{ loadingSlots ? 'Carregando...' : (availableSlots.length ? 'Selecione um horário' : 'Nenhum horário disponível') }}</option>
+              <option *ngFor="let slot of availableSlots" [value]="slot">{{ slot }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem (opcional)</label>
+            <textarea id="message" formControlName="message" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" [disabled]="appointmentForm.invalid || submitting">
+            <i class="fas fa-calendar-plus"></i>
+            {{ submitting ? 'Processando...' : 'Confirmar Agendamento' }}
+          </button>
+        </form>
+      </div>
+
+      <div class="schedule-info">
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h4>Horário de Atendimento</h4>
+          <p>Segunda a Sexta: 9h - 18h<br>Sábado: 9h - 13h</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-video"></i>
+          <h4>Reuniões Online</h4>
+          <p>Google Meet ou Zoom<br>Link enviado por email</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-check-circle"></i>
+          <h4>Resposta Rápida</h4>
+          <p>Confirmação em até 2 horas<br>durante horário comercial</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

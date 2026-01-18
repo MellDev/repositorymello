@@ -1,0 +1,102 @@
+<section id="tools" class="tools">
+  <div class="container">
+    <h2 class="section-title">Ferramentas Interativas</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">
+          <i class="fas fa-images"></i>
+        </div>
+        <h3>Gallery Downloader</h3>
+        <p>Baixe mídias de diversas plataformas com facilidade</p>
+        <button class="btn btn-primary" (click)="openGalleryTool()">Experimentar</button>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <h3>Sistema de Agendamento</h3>
+        <p>Demonstração do sistema de agendamento com Google Calendar</p>
+        <button class="btn btn-primary" (click)="scrollToSection('schedule')">Experimentar</button>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <h3>GitHub Integration</h3>
+        <p>Veja meus repositórios e estatísticas do GitHub</p>
+        <button class="btn btn-primary" (click)="scrollToSection('projects')">Ver Projetos</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Modal -->
+<div class="modal" *ngIf="showGalleryModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <div class="tool-interface">
+      <h2>📥 Gallery Downloader</h2>
+      <p>Faça download de mídias de diversas plataformas</p>
+
+      <div class="form-group">
+        <label for="downloadUrl">URL da Mídia</label>
+        <input
+          type="url"
+          id="downloadUrl"
+          [(ngModel)]="downloadUrl"
+          placeholder="https://exemplo.com/media"
+          [disabled]="downloading"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="downloadQuality">Qualidade</label>
+        <select id="downloadQuality" [(ngModel)]="downloadQuality" [disabled]="downloading">
+          <option value="best">Melhor Qualidade</option>
+          <option value="1080p">1080p</option>
+          <option value="720p">720p</option>
+          <option value="480p">480p</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" [(ngModel)]="includeMetadata" [disabled]="downloading" />
+          Baixar metadata
+        </label>
+      </div>
+
+      <button class="btn btn-primary" (click)="startDownload()" [disabled]="downloading">
+        <i class="fas fa-download"></i>
+        {{ downloading ? 'Processando...' : 'Iniciar Download' }}
+      </button>
+
+      <div *ngIf="downloadResult" class="download-result">
+        <h4>Status do Download</h4>
+        <p><strong>Job ID:</strong> {{ downloadResult.job_id }}</p>
+        <p *ngIf="downloadResult.status">
+          <strong>Status:</strong>
+          <span [class]="'status-' + downloadResult.status.status">
+            {{ downloadResult.status.status }}
+          </span>
+        </p>
+        <p *ngIf="downloadResult.status?.progress !== undefined">
+          <strong>Progresso:</strong> {{ downloadResult.status.progress }}%
+        </p>
+        <div *ngIf="downloadResult.status?.files" class="files-list">
+          <h5>Arquivos baixados:</h5>
+          <ul>
+            <li *ngFor="let file of downloadResult.status.files">
+              {{ file.name }} ({{ (file.size / 1024 / 1024).toFixed(2) }} MB)
+            </li>
+          </ul>
+        </div>
+        <p *ngIf="downloadResult.status?.error" class="error-text">
+          <strong>Erro:</strong> {{ downloadResult.status.error }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
