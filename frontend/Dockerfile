@@ -6,8 +6,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Install ALL dependencies (including devDependencies needed for build)
+RUN npm ci && npm cache clean --force
 
 # Copy source code
 COPY . .
@@ -18,21 +18,19 @@ RUN npm run build -- --configuration production
 # Runtime stage with nginx
 FROM nginx:alpine
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Install gettext for envsubst
+RUN apk add --no-cache gettext
 
-# Copy built app from builder
-COPY --from=builder /app/dist/portfolio-frontend/browser /usr/share/nginx/html
+# Copy built app from builder - Angular 17 outputs to dist/portfolio-frontend
+COPY --from=builder /app/dist/portfolio-frontend /usr/share/nginx/html
 
-# Cloud Run expects the app to listen on PORT env var
-# Create startup script to replace port dynamically
-RUN echo '#!/bin/sh' > /docker-entrypoint.sh && \
-    echo 'export PORT=${PORT:-8080}' >> /docker-entrypoint.sh && \
-    echo 'envsubst "\$PORT" < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf.tmp' >> /docker-entrypoint.sh && \
-    echo 'mv /etc/nginx/conf.d/default.conf.tmp /etc/nginx/conf.d/default.conf' >> /docker-entrypoint.sh && \
-    echo 'nginx -g "daemon off;"' >> /docker-entrypoint.sh && \
-    chmod +x /docker-entrypoint.sh
+# Copy nginx config template
+COPY nginx.conf /etc/nginx/templates/default.conf.template
+
+# Cloud Run provides PORT environment variable
+ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["/docker-entrypoint.sh"]
+# Start nginx - it will automatically process templates with envsubst
+CMD ["sh", "-c", "envsubst '$$PORT' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
