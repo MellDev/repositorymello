@@ -53,7 +53,9 @@ steps:
       - '--memory=512Mi'
       - '--cpu=1'
       - '--max-instances=10'
-      - '--set-env-vars=NODE_ENV=production'
+      - '--timeout=60'
+      - '--port=8080'
+      - '--set-env-vars=NODE_ENV=production,PORT=8080'
     id: 'deploy-backend'
     waitFor: ['push-backend']
 
@@ -70,6 +72,8 @@ steps:
       - '--memory=256Mi'
       - '--cpu=1'
       - '--max-instances=10'
+      - '--timeout=30'
+      - '--port=8080'
     id: 'deploy-frontend'
     waitFor: ['push-frontend']
 

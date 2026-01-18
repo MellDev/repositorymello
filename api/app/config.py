@@ -1,11 +1,12 @@
 from pydantic_settings import BaseSettings
 from typing import List
+import os
 
 
 class Settings(BaseSettings):
     # Server
     api_host: str = "0.0.0.0"
-    api_port: int = 8000
+    api_port: int = int(os.getenv("PORT", "8000"))  # Use PORT env var from Cloud Run
     node_env: str = "development"
 
     # Database
