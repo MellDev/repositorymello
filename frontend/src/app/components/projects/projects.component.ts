@@ -19,13 +19,21 @@ export class ProjectsComponent implements OnInit {
 
   loadProjects() {
     this.loading = true;
+    console.log('Loading projects...');
     this.projectService.getProjects().subscribe({
       next: (response) => {
+        console.log('Projects loaded successfully:', response);
         this.projects = response.projects;
         this.loading = false;
       },
       error: (error) => {
         console.error('Error loading projects:', error);
+        console.error('Error details:', {
+          message: error.message,
+          status: error.status,
+          statusText: error.statusText,
+          url: error.url
+        });
         this.error = 'Erro ao carregar projetos';
         this.loading = false;
       }

@@ -22,7 +22,7 @@ export class ProjectService {
     private http: HttpClient,
     private apiConfig: ApiConfigService
   ) {
-    this.apiUrl = `${this.apiConfig.apiUrl}/api/projects`;
+    this.apiUrl = `${this.apiConfig.apiUrl}/projects/`;
   }
 
   getProjects(category?: string, status?: string, limit?: number): Observable<any> {
@@ -37,6 +37,7 @@ export class ProjectService {
       url += '?' + params.join('&');
     }
     
+    console.log('Fetching projects from:', url);
     return this.http.get(url);
   }
 
