@@ -10,21 +10,70 @@ router = APIRouter()
 PROJECTS = [
     {
         "id": "konoha-barber",
-        "name": "Konoha Barber",
+        "name": "Sistema de Agendamento Inteligente",
         "slug": "konoha-barber",
-        "description": "Sistema completo de agendamento para barbearia",
-        "long_description": "Plataforma web completa com Google Calendar, IA e WhatsApp",
-        "technologies": ["React", "Node.js", "Google Calendar", "OpenAI"],
+        "description": "Sistema completo de agendamento para barbearias com verificação híbrida, sincronização Google Calendar e gestão multi-barbeiros",
+        "long_description": """Sistema de agendamento inteligente com arquitetura serverless, 
+        verificação híbrida (Google Calendar + Banco Local), precificação dinâmica e interface intuitiva. 
+        Previne 100% de double-booking através de dupla verificação e sincronização bidirecional.""",
+        "technologies": [
+            "Python 3.12",
+            "FastAPI 0.104+",
+            "PostgreSQL 15+",
+            "Next.js 14",
+            "React 18",
+            "TypeScript 5.x",
+            "Google Calendar API v3",
+            "Tailwind CSS",
+            "JWT Auth",
+            "Neon Database"
+        ],
         "features": [
-            "Integração Google Calendar API",
-            "IA para gestão automatizada",
-            "Notificações WhatsApp",
-            "Dashboard administrativo"
+            "Verificação Híbrida de Disponibilidade (Google Calendar + Banco Local)",
+            "Grid Visual de Horários com Estados (Disponível/Ocupado/Selecionado)",
+            "Multi-Calendário (Suporte a Múltiplos Barbeiros)",
+            "Sincronização Bidirecional com Google Calendar",
+            "Precificação Dinâmica (Descontos por Horário e Dia)",
+            "Prevenção Total de Double-Booking",
+            "Autenticação JWT com Scopes (Cliente/Barbeiro/Admin)",
+            "TimeSlotPicker Component Customizado",
+            "API REST com Documentação Automática (OpenAPI/Swagger)",
+            "Type Safety Total (TypeScript + Pydantic)",
+            "Deploy Serverless em Cloud Run",
+            "Database com TIMESTAMPTZ Nativo",
+            "Interface Mobile-First Responsiva"
+        ],
+        "highlights": [
+            "🏆 0% de Double-Booking através de verificação híbrida",
+            "🎯 UX Superior com grid visual de disponibilidade",
+            "⚡ Serverless Autoscaling (0-100 instâncias)",
+            "🔄 Sincronização Real-Time com Google Calendar",
+            "💰 Precificação Inteligente com Regras Automáticas",
+            "🔒 Type Safety Total em Todo o Stack",
+            "📱 Design Mobile-First com Tailwind CSS",
+            "🌐 Multi-Tenant Ready para Múltiplos Barbeiros"
+        ],
+        "architecture": {
+            "backend": "FastAPI + Python 3.12 + PostgreSQL (Neon)",
+            "frontend": "Next.js 14 + React 18 + TypeScript",
+            "auth": "JWT com OAuth2PasswordBearer",
+            "integration": "Google Calendar API v3 com Service Account",
+            "hosting": "Cloud Run (Backend + Frontend)",
+            "database": "PostgreSQL Serverless (Neon) com TIMESTAMPTZ"
+        },
+        "differentials": [
+            "Verificação híbrida previne 100% de conflitos de horário",
+            "Calendários individuais por barbeiro para escalabilidade",
+            "Precificação dinâmica otimiza ocupação e receita",
+            "Interface intuitiva reduz erros de agendamento",
+            "Type safety detecta bugs em desenvolvimento",
+            "Sincronização bidirecional mantém consistência total"
         ],
         "status": "completed",
         "category": "web",
-        "github_url": "https://github.com/MellDev/konoha-barber",
-        "demo_url": "https://konoha-barber.vercel.app"
+        "github_url": "https://github.com/MellDev/KonohaBarber",
+        "demo_url": "https://konoha-barber.vercel.app",
+        "api_docs": "https://konoha-barber-api.run.app/docs"
     },
     {
         "id": "media-scraper",
