@@ -14,12 +14,14 @@
     <div *ngIf="!loading && !error" class="projects-grid">
       <div *ngFor="let project of projects" class="project-card">
         <div class="project-image">
-          <i class="fas" [ngClass]="getIcon(project.category)"></i>
+          <img *ngIf="project.image_url" [src]="project.image_url" [alt]="project.name" />
+          <i *ngIf="!project.image_url" class="fas" [ngClass]="getIcon(project.category)"></i>
         </div>
         <h3>{{ project.name }}</h3>
         <p>{{ project.description }}</p>
         <div class="project-tags">
-          <span *ngFor="let tech of project.technologies" class="tag">{{ tech }}</span>
+          <span *ngFor="let tech of project.technologies.slice(0, 4)" class="tag">{{ tech }}</span>
+          <span *ngIf="project.technologies.length > 4" class="tag">+{{ project.technologies.length - 4 }}</span>
         </div>
         <div class="project-actions">
           <a *ngIf="project.github_url" [href]="project.github_url" target="_blank" class="btn btn-small">

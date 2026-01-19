@@ -73,7 +73,8 @@ PROJECTS = [
         "category": "web",
         "github_url": "https://github.com/MellDev/KonohaBarber",
         "demo_url": "https://konoha-barber.vercel.app",
-        "api_docs": "https://konoha-barber-api.run.app/docs"
+        "api_docs": "https://konoha-barber-api.run.app/docs",
+        "image_url": "https://raw.githubusercontent.com/MellDev/KonohaBarber/main/preview.png"
     },
     {
         "id": "media-scraper",

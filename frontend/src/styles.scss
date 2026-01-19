@@ -20,14 +20,13 @@
   --primary-dark: #4338ca;
   --secondary-color: #ec4899;
   --accent-color: #059669;
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
-} --success: #059669;
+  --bg-color: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --success: #059669;
   --warning: #d97706;
   --error: #dc2626;
 }
