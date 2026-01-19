@@ -42,7 +42,14 @@ class Settings(BaseSettings):
     download_path: str = "/tmp/downloads"
 
     # CORS
-    cors_origins: List[str] = ["http://localhost:3000", "http://localhost:3001"]
+    cors_origins: List[str] = [
+        "http://localhost:3000", 
+        "http://localhost:3001", 
+        "http://localhost:4200",
+        "https://projetosmello.com.br",
+        "https://www.projetosmello.com.br",
+        "https://portfolio-frontend-323223466577.us-east4.run.app"
+    ]
 
     # Rate Limiting
     rate_limit_per_minute: int = 60
