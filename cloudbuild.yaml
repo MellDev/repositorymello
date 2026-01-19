@@ -7,7 +7,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/portfolio-api:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/portfolio-api:$BUILD_ID'
       - '-t'
       - 'gcr.io/$PROJECT_ID/portfolio-api:latest'
       - './api'
@@ -18,7 +18,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/portfolio-frontend:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/portfolio-frontend:$BUILD_ID'
       - '-t'
       - 'gcr.io/$PROJECT_ID/portfolio-frontend:latest'
       - './frontend'
@@ -28,7 +28,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/$PROJECT_ID/portfolio-api:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/portfolio-api:$BUILD_ID'
     id: 'push-backend'
     waitFor: ['build-backend']
 
@@ -36,7 +36,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/$PROJECT_ID/portfolio-frontend:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/portfolio-frontend:$BUILD_ID'
     id: 'push-frontend'
     waitFor: ['build-frontend']
 
@@ -46,7 +46,7 @@ steps:
       - 'run'
       - 'deploy'
       - 'portfolio-api'
-      - '--image=gcr.io/$PROJECT_ID/portfolio-api:$SHORT_SHA'
+      - '--image=gcr.io/$PROJECT_ID/portfolio-api:$BUILD_ID'
       - '--region=us-east4'
       - '--platform=managed'
       - '--allow-unauthenticated'
@@ -65,7 +65,7 @@ steps:
       - 'run'
       - 'deploy'
       - 'portfolio-frontend'
-      - '--image=gcr.io/$PROJECT_ID/portfolio-frontend:$SHORT_SHA'
+      - '--image=gcr.io/$PROJECT_ID/portfolio-frontend:$BUILD_ID'
       - '--region=us-east4'
       - '--platform=managed'
       - '--allow-unauthenticated'
