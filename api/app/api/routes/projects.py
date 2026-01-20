@@ -72,8 +72,8 @@ PROJECTS = [
         "status": "completed",
         "category": "web",
         "github_url": "https://github.com/MellDev/KonohaBarber",
-        "demo_url": "https://konoha-barber.vercel.app",
-        "api_docs": "https://konoha-barber-api.run.app/docs",
+        "demo_url": "https://konohabarber.com.br",
+        "api_docs": "https://konohabarber-backend-288762586861.us-central1.run.app/docs",
         "image_url": "https://raw.githubusercontent.com/MellDev/KonohaBarber/main/preview.png"
     },
     {
