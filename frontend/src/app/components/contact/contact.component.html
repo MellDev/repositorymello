@@ -1,63 +1,39 @@
 <section id="contact" class="contact">
   <div class="container">
-    <h2 class="section-title">Entre em Contato</h2>
+    <h2 class="section-title">{{ 'contact.title' | translate }}</h2>
+    <p class="section-description">{{ 'contact.description' | translate }}</p>
     
     <div class="contact-container">
-      <div class="contact-form">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="name">Nome *</label>
-            <input type="text" id="name" formControlName="name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" formControlName="email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Telefone</label>
-            <input type="tel" id="phone" formControlName="phone" />
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Assunto</label>
-            <input type="text" id="subject" formControlName="subject" />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Mensagem *</label>
-            <textarea id="message" formControlName="message" rows="5" required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-full" [disabled]="contactForm.invalid || submitting">
-            <i class="fas fa-paper-plane"></i>
-            {{ submitting ? 'Enviando...' : 'Enviar Mensagem' }}
-          </button>
-        </form>
-      </div>
-
       <div class="contact-info">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
-          <h4>Email</h4>
-          <a href="mailto:contato@exemplo.com">contato&#64;exemplo.com</a>
+          <h4>{{ 'contact.info.email' | translate }}</h4>
+          <a href="mailto:anderson.domingues804@gmail.com">anderson.domingues804&#64;gmail.com</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-whatsapp"></i>
-          <h4>WhatsApp</h4>
+          <h4>{{ 'contact.info.whatsapp' | translate }}</h4>
           <a href="https://wa.me/5547997719233" target="_blank">+55 47 99771-9233</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-github"></i>
-          <h4>GitHub</h4>
+          <h4>{{ 'contact.info.github' | translate }}</h4>
           <a href="https://github.com/MellDev" target="_blank">&#64;MellDev</a>
         </div>
         <div class="contact-item">
           <i class="fab fa-linkedin"></i>
-          <h4>LinkedIn</h4>
+          <h4>{{ 'contact.info.linkedin' | translate }}</h4>
           <a href="https://www.linkedin.com/in/andemello/" target="_blank">Anderson Mello</a>
         </div>
+      </div>
+      
+      <div class="contact-cta">
+        <h3>{{ 'contact.cta.title' | translate }}</h3>
+        <p>{{ 'contact.cta.description' | translate }}</p>
+        <a href="mailto:anderson.domingues804@gmail.com" class="btn btn-primary btn-large">
+          <i class="fas fa-envelope"></i>
+          {{ 'contact.cta.button' | translate }}
+        </a>
       </div>
     </div>
   </div>

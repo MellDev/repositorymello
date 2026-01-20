@@ -1,10 +1,10 @@
 <section id="projects" class="projects">
   <div class="container">
-    <h2 class="section-title">Projetos Destacados</h2>
+    <h2 class="section-title">{{ 'projects.title' | translate }}</h2>
     
     <div *ngIf="loading" class="loading-container">
       <div class="loading"></div>
-      <p>Carregando projetos...</p>
+      <p>{{ 'projects.loading' | translate }}</p>
     </div>
 
     <div *ngIf="error" class="error-message">
@@ -25,10 +25,10 @@
         </div>
         <div class="project-actions">
           <a *ngIf="project.github_url" [href]="project.github_url" target="_blank" class="btn btn-small">
-            <i class="fab fa-github"></i> GitHub
+            <i class="fab fa-github"></i> {{ 'projects.viewCode' | translate }}
           </a>
           <a *ngIf="project.demo_url" [href]="project.demo_url" target="_blank" class="btn btn-small btn-primary">
-            <i class="fas fa-external-link-alt"></i> Demo
+            <i class="fas fa-external-link-alt"></i> {{ 'projects.viewDemo' | translate }}
           </a>
         </div>
       </div>

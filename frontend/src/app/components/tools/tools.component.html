@@ -1,32 +1,32 @@
 <section id="tools" class="tools">
   <div class="container">
-    <h2 class="section-title">Ferramentas Interativas</h2>
+    <h2 class="section-title">{{ 'tools.title' | translate }}</h2>
     <div class="tools-grid">
       <div class="tool-card">
         <div class="tool-icon">
           <i class="fas fa-images"></i>
         </div>
-        <h3>Gallery Downloader</h3>
-        <p>Baixe mídias de diversas plataformas com facilidade</p>
-        <button class="btn btn-primary" (click)="openGalleryTool()">Experimentar</button>
+        <h3>{{ 'tools.gallery.title' | translate }}</h3>
+        <p>{{ 'tools.gallery.description' | translate }}</p>
+        <button class="btn btn-primary" (click)="openGalleryTool()">{{ 'tools.tryIt' | translate }}</button>
       </div>
 
       <div class="tool-card">
         <div class="tool-icon">
           <i class="fas fa-calendar-check"></i>
         </div>
-        <h3>Sistema de Agendamento</h3>
-        <p>Demonstração do sistema de agendamento com Google Calendar</p>
-        <button class="btn btn-primary" (click)="scrollToSection('schedule')">Experimentar</button>
+        <h3>{{ 'tools.schedule.title' | translate }}</h3>
+        <p>{{ 'tools.schedule.description' | translate }}</p>
+        <button class="btn btn-primary" (click)="scrollToSection('schedule')">{{ 'tools.tryIt' | translate }}</button>
       </div>
 
       <div class="tool-card">
         <div class="tool-icon">
           <i class="fab fa-github"></i>
         </div>
-        <h3>GitHub Integration</h3>
-        <p>Veja meus repositórios e estatísticas do GitHub</p>
-        <button class="btn btn-primary" (click)="scrollToSection('projects')">Ver Projetos</button>
+        <h3>{{ 'tools.github.title' | translate }}</h3>
+        <p>{{ 'tools.github.description' | translate }}</p>
+        <button class="btn btn-primary" (click)="scrollToSection('projects')">{{ 'tools.viewProjects' | translate }}</button>
       </div>
     </div>
   </div>

@@ -34,6 +34,7 @@ export class TranslationService {
         description: 'Confira alguns dos meus trabalhos recentes',
         viewProject: 'Ver Projeto',
         viewCode: 'Ver Código',
+        viewDemo: 'Demo',
         loading: 'Carregando projetos...',
         error: 'Erro ao carregar projetos'
       },
@@ -41,6 +42,20 @@ export class TranslationService {
       tools: {
         title: 'Ferramentas',
         description: 'Utilitários para facilitar seu dia a dia',
+        tryIt: 'Experimentar',
+        viewProjects: 'Ver Projetos',
+        gallery: {
+          title: 'Gallery Downloader',
+          description: 'Baixe mídias de diversas plataformas com facilidade'
+        },
+        schedule: {
+          title: 'Sistema de Agendamento',
+          description: 'Demonstração do sistema de agendamento com Google Calendar'
+        },
+        github: {
+          title: 'GitHub Integration',
+          description: 'Veja meus repositórios e estatísticas do GitHub'
+        },
         scraper: {
           title: 'Scraper de Mídia',
           description: 'Baixe vídeos e imagens de diversas plataformas',
@@ -72,23 +87,17 @@ export class TranslationService {
       contact: {
         title: 'Entre em Contato',
         description: 'Vamos trabalhar juntos? Entre em contato comigo',
-        form: {
-          name: 'Nome',
-          email: 'Email',
-          subject: 'Assunto',
-          message: 'Mensagem',
-          btnSubmit: 'Enviar',
-          sending: 'Enviando...'
-        },
         info: {
           email: 'Email',
           whatsapp: 'WhatsApp',
           github: 'GitHub',
           linkedin: 'LinkedIn'
         },
-        success: 'Mensagem enviada com sucesso!',
-        error: 'Erro ao enviar mensagem',
-        validation: 'Por favor, preencha todos os campos obrigatórios'
+        cta: {
+          title: 'Pronto para começar?',
+          description: 'Entre em contato agora mesmo e vamos discutir seu projeto!',
+          button: 'Enviar Email'
+        }
       },
       // Footer
       footer: {
@@ -118,6 +127,7 @@ export class TranslationService {
         description: 'Check out some of my recent work',
         viewProject: 'View Project',
         viewCode: 'View Code',
+        viewDemo: 'Demo',
         loading: 'Loading projects...',
         error: 'Error loading projects'
       },
@@ -125,6 +135,20 @@ export class TranslationService {
       tools: {
         title: 'Tools',
         description: 'Utilities to make your day easier',
+        tryIt: 'Try it',
+        viewProjects: 'View Projects',
+        gallery: {
+          title: 'Gallery Downloader',
+          description: 'Download media from multiple platforms with ease'
+        },
+        schedule: {
+          title: 'Scheduling System',
+          description: 'Scheduling system demonstration with Google Calendar'
+        },
+        github: {
+          title: 'GitHub Integration',
+          description: 'View my repositories and GitHub statistics'
+        },
         scraper: {
           title: 'Media Scraper',
           description: 'Download videos and images from various platforms',
@@ -156,23 +180,17 @@ export class TranslationService {
       contact: {
         title: 'Get in Touch',
         description: "Let's work together? Contact me",
-        form: {
-          name: 'Name',
-          email: 'Email',
-          subject: 'Subject',
-          message: 'Message',
-          btnSubmit: 'Send',
-          sending: 'Sending...'
-        },
         info: {
           email: 'Email',
           whatsapp: 'WhatsApp',
           github: 'GitHub',
           linkedin: 'LinkedIn'
         },
-        success: 'Message sent successfully!',
-        error: 'Error sending message',
-        validation: 'Please fill in all required fields'
+        cta: {
+          title: 'Ready to start?',
+          description: 'Get in touch now and let\'s discuss your project!',
+          button: 'Send Email'
+        }
       },
       // Footer
       footer: {
@@ -202,6 +220,7 @@ export class TranslationService {
         description: 'Vea algunos de mis trabajos recientes',
         viewProject: 'Ver Proyecto',
         viewCode: 'Ver Código',
+        viewDemo: 'Demo',
         loading: 'Cargando proyectos...',
         error: 'Error al cargar proyectos'
       },
@@ -209,6 +228,20 @@ export class TranslationService {
       tools: {
         title: 'Herramientas',
         description: 'Utilidades para facilitar tu día a día',
+        tryIt: 'Probar',
+        viewProjects: 'Ver Proyectos',
+        gallery: {
+          title: 'Gallery Downloader',
+          description: 'Descarga medios de varias plataformas con facilidad'
+        },
+        schedule: {
+          title: 'Sistema de Agendamiento',
+          description: 'Demostración del sistema de agendamiento con Google Calendar'
+        },
+        github: {
+          title: 'GitHub Integration',
+          description: 'Ve mis repositorios y estadísticas de GitHub'
+        },
         scraper: {
           title: 'Scraper de Medios',
           description: 'Descarga videos e imágenes de varias plataformas',
@@ -240,23 +273,17 @@ export class TranslationService {
       contact: {
         title: 'Ponte en Contacto',
         description: '¿Trabajamos juntos? Contáctame',
-        form: {
-          name: 'Nombre',
-          email: 'Email',
-          subject: 'Asunto',
-          message: 'Mensaje',
-          btnSubmit: 'Enviar',
-          sending: 'Enviando...'
-        },
         info: {
           email: 'Email',
           whatsapp: 'WhatsApp',
           github: 'GitHub',
           linkedin: 'LinkedIn'
         },
-        success: '¡Mensaje enviado con éxito!',
-        error: 'Error al enviar mensaje',
-        validation: 'Por favor, complete todos los campos requeridos'
+        cta: {
+          title: '¿Listo para empezar?',
+          description: '¡Ponte en contacto ahora y discutamos tu proyecto!',
+          button: 'Enviar Email'
+        }
       },
       // Footer
       footer: {
