@@ -32,9 +32,7 @@ export class TranslationService {
       projects: {
         title: 'Projetos',
         description: 'Confira alguns dos meus trabalhos recentes',
-        viewProject: 'Ver Projeto',
-        viewCode: 'Ver Código',
-        viewDemo: 'Demo',
+        contact: 'Entrar em Contato',
         loading: 'Carregando projetos...',
         error: 'Erro ao carregar projetos'
       },
@@ -125,9 +123,7 @@ export class TranslationService {
       projects: {
         title: 'Projects',
         description: 'Check out some of my recent work',
-        viewProject: 'View Project',
-        viewCode: 'View Code',
-        viewDemo: 'Demo',
+        contact: 'Get in Touch',
         loading: 'Loading projects...',
         error: 'Error loading projects'
       },
@@ -218,9 +214,7 @@ export class TranslationService {
       projects: {
         title: 'Proyectos',
         description: 'Vea algunos de mis trabajos recientes',
-        viewProject: 'Ver Proyecto',
-        viewCode: 'Ver Código',
-        viewDemo: 'Demo',
+        contact: 'Contactar',
         loading: 'Cargando proyectos...',
         error: 'Error al cargar proyectos'
       },

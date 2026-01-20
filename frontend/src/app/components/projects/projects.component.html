@@ -24,11 +24,8 @@
           <span *ngIf="project.technologies.length > 4" class="tag">+{{ project.technologies.length - 4 }}</span>
         </div>
         <div class="project-actions">
-          <a *ngIf="project.github_url" [href]="project.github_url" target="_blank" class="btn btn-small">
-            <i class="fab fa-github"></i> {{ 'projects.viewCode' | translate }}
-          </a>
-          <a *ngIf="project.demo_url" [href]="project.demo_url" target="_blank" class="btn btn-small btn-primary">
-            <i class="fas fa-external-link-alt"></i> {{ 'projects.viewDemo' | translate }}
+          <a href="#contact" class="btn btn-small btn-primary" (click)="scrollToContact($event)">
+            <i class="fas fa-envelope"></i> {{ 'projects.contact' | translate }}
           </a>
         </div>
       </div>

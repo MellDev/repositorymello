@@ -94,6 +94,45 @@ PROJECTS = [
         "github_url": "https://github.com/MellDev/media-scraper"
     },
     {
+        "id": "chat-ai-assistant",
+        "name": "Chat AI Assistant",
+        "slug": "chat-ai-assistant",
+        "description": "Assistente virtual inteligente com OpenAI GPT-4o-mini para automação de atendimento empresarial",
+        "long_description": "Sistema de chat inteligente com IA para empresas, oferecendo atendimento automatizado 24/7, integração com APIs, controle de sessões e rate limiting para otimizar custos.",
+        "technologies": [
+            "Python 3.12",
+            "FastAPI",
+            "OpenAI GPT-4o-mini",
+            "Angular 17",
+            "TypeScript",
+            "RxJS",
+            "LocalStorage",
+            "SHA256 Hashing"
+        ],
+        "features": [
+            "Chat em tempo real com IA GPT-4o-mini",
+            "Limite de 3 mensagens por sessão para controle de custos",
+            "Identificação de usuários por IP + User-Agent",
+            "Armazenamento local de conversas",
+            "Interface responsiva e intuitiva",
+            "Integração com backend FastAPI",
+            "Rate limiting inteligente",
+            "Histórico de conversas persistente"
+        ],
+        "highlights": [
+            "💬 IA Conversacional Avançada com GPT-4o-mini",
+            "💰 Controle de Custos com Limite de Mensagens",
+            "🔒 Identificação Segura de Usuários",
+            "⚡ Respostas em Tempo Real",
+            "📱 Interface Mobile-First",
+            "🎯 Otimizado para Atendimento Empresarial"
+        ],
+        "status": "completed",
+        "category": "ai",
+        "github_url": "https://github.com/MellDev/repositorymello",
+        "image_url": "https://raw.githubusercontent.com/MellDev/repositorymello/main/chat-preview.png"
+    },
+    {
         "id": "ai-automation",
         "name": "AI Automation Suite",
         "slug": "ai-automation",

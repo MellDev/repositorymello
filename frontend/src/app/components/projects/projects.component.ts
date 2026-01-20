@@ -49,4 +49,12 @@ export class ProjectsComponent implements OnInit {
     };
     return icons[category] || 'fa-code';
   }
+
+  scrollToContact(event: Event) {
+    event.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
