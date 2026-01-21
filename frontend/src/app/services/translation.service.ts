@@ -26,7 +26,8 @@ export class TranslationService {
         subtitle: 'Data Engineer & Software Engineer',
         description: 'Transformando dados em soluções inteligentes | Desenvolvimento web moderno, automações e integrações com IA',
         btnProjects: 'Ver Projetos',
-        btnSchedule: 'Agendar Reunião'
+        btnSchedule: 'Agendar Reunião',
+        btnResume: 'Baixar Currículo'
       },
       // Projects
       projects: {
@@ -117,7 +118,8 @@ export class TranslationService {
         subtitle: 'Data Engineer & Software Engineer',
         description: 'Transforming data into intelligent solutions | Modern web development, automation and AI integrations',
         btnProjects: 'View Projects',
-        btnSchedule: 'Schedule Meeting'
+        btnSchedule: 'Schedule Meeting',
+        btnResume: 'Download Resume'
       },
       // Projects
       projects: {
@@ -208,7 +210,8 @@ export class TranslationService {
         subtitle: 'Data Engineer & Software Engineer',
         description: 'Transformando datos en soluciones inteligentes | Desarrollo web moderno, automatizaciones e integraciones con IA',
         btnProjects: 'Ver Proyectos',
-        btnSchedule: 'Agendar Reunión'
+        btnSchedule: 'Agendar Reunión',
+        btnResume: 'Descargar CV'
       },
       // Projects
       projects: {

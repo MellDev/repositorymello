@@ -7,6 +7,9 @@
       <div class="cta-buttons">
         <button class="btn btn-primary" (click)="scrollToSection('projects')">{{ 'hero.btnProjects' | translate }}</button>
         <button class="btn btn-secondary" (click)="scrollToSection('schedule')">{{ 'hero.btnSchedule' | translate }}</button>
+        <button class="btn btn-outline" (click)="downloadResume()">
+          <i class="fas fa-download"></i> {{ 'hero.btnResume' | translate }}
+        </button>
       </div>
     </div>
     <div class="hero-illustration">

@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 import logging
 
 from app.config import settings
-from app.api.routes import calendar, github, scraper, projects, contact, chat
+from app.api.routes import calendar, github, scraper, projects, contact, chat, resume
 
 # Configure logging
 logging.basicConfig(
@@ -18,11 +18,11 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
-    logger.info("🚀 Starting Portfolio API")
-    logger.info(f"📍 Environment: {settings.node_env}")
-    logger.info(f"🌐 CORS Origins: {settings.cors_origins}")
+    logger.info("Starting Portfolio API")
+    logger.info(f"Environment: {settings.node_env}")
+    logger.info(f"CORS Origins: {settings.cors_origins}")
     yield
-    logger.info("👋 Shutting down Portfolio API")
+    logger.info("Shutting down Portfolio API")
 
 
 app = FastAPI(
@@ -65,6 +65,7 @@ app.include_router(scraper.router, prefix="/api/scraper", tags=["Scraper"])
 app.include_router(projects.router, prefix="/api/projects", tags=["Projects"])
 app.include_router(contact.router, prefix="/api/contact", tags=["Contact"])
 app.include_router(chat.router, prefix="/api", tags=["Chat"])
+app.include_router(resume.router, prefix="/api/resume", tags=["Resume"])
 
 
 @app.get("/", tags=["Root"])
