@@ -51,7 +51,7 @@ steps:
       - '--max-instances=10'
       - '--timeout=60'
       - '--port=8080'
-      - '--set-env-vars=NODE_ENV=production,OPENAI_API_KEY=${_OPENAI_API_KEY},OPENAI_MODEL=gpt-4o-mini,MAX_CHAT_MESSAGES_PER_SESSION=3'
+      - '--set-env-vars=NODE_ENV=production,OPENAI_MODEL=gpt-4o-mini,MAX_CHAT_MESSAGES_PER_SESSION=3'
     id: 'deploy-backend'
     waitFor: ['push-backend']
 
